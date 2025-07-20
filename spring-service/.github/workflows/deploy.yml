@@ -26,7 +26,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::YOUR_ACCOUNT_ID:role/AWS-GITHUB-ROLE
+          role-to-assume: arn:aws:iam::636185081454:role/AWS-GITHUB-ROLE
           role-session-name: GitHubActionsSession
 
       - name: Login to Amazon ECR
@@ -44,7 +44,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          container-name: my-app
+          container-name: spring-service
           image: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest
 
       - name: Deploy to ECS

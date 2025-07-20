@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class DemoApplication  {
-//    @Override
-//    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-//        return builder.sources(DemoApplication.class);
-//    }
+public class DemoApplication extends SpringBootServletInitializer {
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(DemoApplication.class);
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);

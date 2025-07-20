@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoApplication extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        System.out.println("Heelo");
         return builder.sources(DemoApplication.class);
     }
 

@@ -1,0 +1,21 @@
+{
+  "family": "spring-service",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "ECSExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "spring-service",
+      "image": "ECR_REPO_URI:latest",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512"
+}
